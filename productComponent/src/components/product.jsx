@@ -4,9 +4,10 @@ export default class Product extends Component {
     count: 0,
   };
   render() {
+  const {productName} = this.props
     return (
-      <>
-        <span className="m-2 text-info">laptop</span>
+      <div>
+        <span className="m-2 text-info">{productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
           onClick={this.handelIncreamente}
@@ -26,7 +27,7 @@ export default class Product extends Component {
         >
           delete
         </button>
-      </>
+      </div>
     );
   }
   handelIncreamente = () => {
