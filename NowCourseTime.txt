@@ -4,4 +4,3 @@ the second day = 00:45:12
 the third day = 01:16:34
 the fourth day = 01:31:40
 the fifth day = 01:57:25
-the fifth day = 01:57:25
