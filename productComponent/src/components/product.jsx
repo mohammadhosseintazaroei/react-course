@@ -1,13 +1,15 @@
 import { Component } from "react";
 export default class Product extends Component {
-  count = 0;
+  state = {
+    count: 0,
+  };
   render() {
     return (
       <>
-        <span className="m-2 text-info">product name</span>
+        <span className="m-2 text-info">laptop</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
-          onClick={this.handelIncreamente.bind(this)}
+          onClick={this.handelIncreamente}
           className="m-2 btn btn-sm btn-success"
         >
           +
@@ -19,7 +21,7 @@ export default class Product extends Component {
           -
         </button>
         <button
-          onClick={() => this.handelDelete(1)}
+          onClick={this.handelDelete}
           className="m-2 btn btn-sm btn-danger "
         >
           delete
@@ -27,20 +29,22 @@ export default class Product extends Component {
       </>
     );
   }
-  handelIncreamente() {
-    console.log("increamente", this);
-  }
-  handelDecreamente = () => {
-    console.log("decreamente", this);
+  handelIncreamente = () => {
+    const { count } = this.state;
+    this.setState({ count: count + 1 });
   };
-  handelDelete(itemNumber) {
-    console.log("delete", itemNumber);
-  }
+  handelDecreamente = () => {
+    const { count } = this.state;
+    this.setState({ count: count - 1 });
+  };
+  handelDelete = () => {
+    console.log("delete");
+  };
   format() {
-    if (this.count == 0) {
+    if (this.state.count == 0) {
       return "zero";
     } else {
-      return this.count;
+      return this.state.count;
     }
   }
 }
