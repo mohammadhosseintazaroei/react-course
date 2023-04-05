@@ -1,11 +1,12 @@
 import { Component } from "react";
 export default class Product extends Component {
   state = {
-    count: 0,
+    count: this.props.count,
   };
   render() {
   const {productName} = this.props
     return (
+  <>
       <div>
         <span className="m-2 text-info">{productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
@@ -28,6 +29,8 @@ export default class Product extends Component {
           delete
         </button>
       </div>
+    {this.props.children}
+      </>
     );
   }
   handelIncreamente = () => {

@@ -2,12 +2,28 @@ import React, { Component } from "react";
 import Product from "./product";
 
 export default class Products extends Component {
+  state = {
+    products: [
+      { id: 1, count: 1, productName: "laptop" },
+      { id: 2, count: 3, productName: "phone" },
+      { id: 3, count: 2, productName: "airpod" },
+      { id: 4, count: 7, productName: "toy" },
+    ],
+  };
   render() {
     return (
+    
       <>
-        <Product productName={"phone"}/> 
-        <Product productName={"laptop"}/> 
-        <Product productName={"airpods"}/>
+        {this.state.products.map((product, index) => (
+          <Product
+            key={index}
+            productName={product.productName}
+            count={product.count}
+          >
+            <p>Hello its children props</p>
+            
+            </Product>
+        ))}
       </>
     );
   }
