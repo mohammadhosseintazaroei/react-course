@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Product from "./product";
+import { Button } from "bootstrap";
 
 export default class Products extends Component {
   state = {
@@ -13,9 +14,14 @@ export default class Products extends Component {
   render() {
     return (
       <>
+        <button onClick={this.handleReset} className="btn btn-primary">
+          Reset
+        </button>
         {this.state.products.map((product, index) => (
           <Product
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncreamente}
+            onDecreamente={this.handleDecreamente}
             id={product.id}
             key={index}
             productName={product.productName}
@@ -27,7 +33,27 @@ export default class Products extends Component {
   }
 
   handleDelete = (productId) => {
-    const newProducts = this.state.products.filter(p => p.id !== productId)
-    this.setState({products: newProducts})
+    const newProducts = this.state.products.filter((p) => p.id !== productId);
+    this.setState({ products: newProducts });
+  };
+  handleIncreamente = (productId) => {
+    const newProducts = [...this.state.products];
+    const index = newProducts.findIndex((p) => p.id === productId);
+    newProducts[index].count += 1;
+    this.setState({ products: newProducts });
+  };
+  handleDecreamente = (productId) => {
+    const newProducts = [...this.state.products];
+    const index = newProducts.findIndex((p) => p.id === productId);
+    newProducts[index].count -= 1;
+    this.setState({ products: newProducts });
+  };
+  handleReset = () => {
+    const newProducts = this.state.products.map((product) => {
+      product.count = 0;
+      return product;
+    });
+    console.log(newProducts);
+    this.setState({ products: newProducts });
   };
 }

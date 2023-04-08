@@ -10,10 +10,15 @@ const Products = () => {
   ]);
   return (
     <>
+          <button onClick={handleReset} className="btn btn-primary">
+          Reset
+        </button>
       {products.map((product, index) => (
         <Product
           key={index}
           id={product.id}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
           onDelete={handleDelete}
           productName={product.productName}
           count={product.count}
@@ -21,9 +26,29 @@ const Products = () => {
       ))}
     </>
   );
+  function handleIncrement  (productId) {
+    const newProducts = [...products];
+    const index = newProducts.findIndex((p) => p.id === productId);
+    newProducts[index].count += 1;
+    setProducts( newProducts );
+  };
+  function handleDecrement  (productId)  {
+    const newProducts = [...products];
+    const index = newProducts.findIndex((p) => p.id === productId);
+    newProducts[index].count -= 1;
+    setProducts( newProducts );
+
+  };
   function handleDelete  (productId){
     const newProducts = products.filter(p => p.id !== productId)
     setProducts( newProducts)
+  };
+function handleReset  ()  {
+    const newProducts = products.map((product) => {
+      product.count = 0;
+      return product;
+    });
+    setProducts( newProducts );
   };
 };
 

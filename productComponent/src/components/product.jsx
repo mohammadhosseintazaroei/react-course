@@ -1,8 +1,6 @@
 import { Component } from "react";
 export default class Product extends Component {
-  state = {
-    count: this.props.count,
-  };
+
   render() {
   const {productName} = this.props
     return (
@@ -10,7 +8,7 @@ export default class Product extends Component {
         <span className="m-2 text-info">{productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
-          onClick={this.handelIncreamente}
+          onClick={this.handelIncrement}
           className="m-2 btn btn-sm btn-success"
         >
           +
@@ -30,22 +28,21 @@ export default class Product extends Component {
       </div>
     );
   }
-  handelIncreamente = () => {
-    const { count } = this.state;
-    this.setState({ count: count + 1 });
+  handelIncrement = () => {
+this.props.onIncrement(this.props.id)
   };
   handelDecreamente = () => {
-    const { count } = this.state;
-    this.setState({ count: count - 1 });
+    this.props.onDecreamente(this.props.id)
+
   };
   handelDelete = () => {
   this.props.onDelete(this.props.id)
   };
   format() {
-    if (this.state.count == 0) {
+    if (this.props.count == 0) {
       return "zero";
     } else {
-      return this.state.count;
+      return this.props.count;
     }
   }
 }

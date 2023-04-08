@@ -1,6 +1,4 @@
-import { useState } from "react";
-const Product = ({ productName, count: propCount,onDelete, id }) => {
-  const [count, setCount] = useState(propCount);
+const Product = ({ productName, count,onDelete,onIncrement,onDecrement, id }) => {
 
   return (
     <div>
@@ -24,10 +22,10 @@ const Product = ({ productName, count: propCount,onDelete, id }) => {
     </div>
   );
   function handelIncreamente() {
-    setCount(count + 1);
+    onIncrement(id)
   }
   function handelDecreamente() {
-    setCount(count - 1);
+    onDecrement(id)
   }
   function handelDelete() {
 
