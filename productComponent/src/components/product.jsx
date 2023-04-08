@@ -6,7 +6,6 @@ export default class Product extends Component {
   render() {
   const {productName} = this.props
     return (
-  <>
       <div>
         <span className="m-2 text-info">{productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
@@ -29,8 +28,6 @@ export default class Product extends Component {
           delete
         </button>
       </div>
-    {this.props.children}
-      </>
     );
   }
   handelIncreamente = () => {
@@ -42,7 +39,7 @@ export default class Product extends Component {
     this.setState({ count: count - 1 });
   };
   handelDelete = () => {
-    console.log("delete");
+  this.props.onDelete(this.props.id)
   };
   format() {
     if (this.state.count == 0) {

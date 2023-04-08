@@ -12,19 +12,22 @@ export default class Products extends Component {
   };
   render() {
     return (
-    
       <>
         {this.state.products.map((product, index) => (
           <Product
+            onDelete={this.handleDelete}
+            id={product.id}
             key={index}
             productName={product.productName}
             count={product.count}
-          >
-            <p>Hello its children props</p>
-            
-            </Product>
+          />
         ))}
       </>
     );
   }
+
+  handleDelete = (productId) => {
+    const newProducts = this.state.products.filter(p => p.id !== productId)
+    this.setState({products: newProducts})
+  };
 }
