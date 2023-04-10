@@ -5,13 +5,13 @@ const Product = ({ productName, count,onDelete,onIncrement,onDecrement, id }) =>
       <span className="m-2 text-info">{productName}</span>
       <span className="m-2 badge bg-primary">{format()}</span>
       <button
-        onClick={handelIncreamente}
+        onClick={handelIncrement}
         className="m-2 btn btn-sm btn-success"
       >
         +
       </button>
       <button
-        onClick={handelDecreamente}
+        onClick={handelDecrement}
         className="m-2 btn btn-sm btn-warning"
       >
         -
@@ -21,10 +21,10 @@ const Product = ({ productName, count,onDelete,onIncrement,onDecrement, id }) =>
       </button>
     </div>
   );
-  function handelIncreamente() {
+  function handelIncrement () {
     onIncrement(id)
   }
-  function handelDecreamente() {
+  function handelDecrement() {
     onDecrement(id)
   }
   function handelDelete() {

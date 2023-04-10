@@ -6,7 +6,7 @@ export default class Product extends Component {
     return (
       <div>
         <span className="m-2 text-info">{productName}</span>
-        <span className="m-2 badge bg-primary">{this.format()}</span>
+        <span className="m-2 badge bg-primary">{this.format()}</span> 
         <button
           onClick={this.handelIncrement}
           className="m-2 btn btn-sm btn-success"
@@ -14,7 +14,7 @@ export default class Product extends Component {
           +
         </button>
         <button
-          onClick={this.handelDecreamente}
+          onClick={this.handelDecrement}
           className="m-2 btn btn-sm btn-warning"
         >
           -
@@ -31,8 +31,8 @@ export default class Product extends Component {
   handelIncrement = () => {
 this.props.onIncrement(this.props.id)
   };
-  handelDecreamente = () => {
-    this.props.onDecreamente(this.props.id)
+  handelDecrement = () => {
+    this.props.onDecrement(this.props.id)
 
   };
   handelDelete = () => {
