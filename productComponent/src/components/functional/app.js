@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Products from "./products";
 import Navbar from "./navbar";
-
+import ProductContext from "../../context/products";
 export default function App() {
   const [products, setProducts] = useState([
     { id: 1, count: 1, productName: "laptop" },
@@ -11,20 +11,24 @@ export default function App() {
   ]);
   return (
     <>
-      <Navbar products={products} />
-      <Products
-        products={products}
-        onDelete={handleDelete}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onReset={handleReset}
-      />
+      <ProductContext.Provider
+        value={{
+          products: products,
+          onDelete: handleDelete,
+          onIncrement: handleIncrement,
+          onDecrement: handleDecrement,
+          onReset: handleReset,
+        }}
+      >
+        <Navbar />
+        <Products />
+      </ProductContext.Provider>
     </>
   );
-  function handleDelete (productId) {
+  function handleDelete(productId) {
     const newProducts = products.filter((p) => p.id !== productId);
     setProducts(newProducts);
-  };
+  }
   function handleIncrement(productId) {
     const newProducts = [...products];
     const index = newProducts.findIndex((p) => p.id === productId);

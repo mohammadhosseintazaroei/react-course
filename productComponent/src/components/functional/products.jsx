@@ -1,25 +1,19 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Product from "./product";
+import ProductContext from "../../\context/products";
 
-const Products = ({
-  products,
-  onDelete,
-  onIncrement,
-  onReset,
-  onDecrement,
-}) => {
+const Products = () => {
+  const productContext = useContext(ProductContext);
   return (
     <>
-      <button onClick={onReset} className="btn btn-primary">
+      <button onClick={productContext.onReset} className="btn btn-primary">
         Reset
       </button>
-      {products.map((product, index) => (
+      {productContext.products.map((product, index) => (
         <Product
           key={index}
           id={product.id}
-          onIncrement={onIncrement}
-          onDecrement={onDecrement}
-          onDelete={onDelete}
+    
           productName={product.productName}
           count={product.count}
         />
