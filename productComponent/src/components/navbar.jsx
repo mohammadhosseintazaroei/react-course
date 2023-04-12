@@ -19,8 +19,6 @@ class Navbar extends Component {
   calculateSum = () => {
     let sum = 0;
     this.context.products.forEach((p) => {
-      console.log(p.count);
-
       sum += p.count;
     });
     return sum;
