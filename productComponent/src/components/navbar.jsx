@@ -5,14 +5,9 @@ class Navbar extends Component {
   static contextType = ProductContext;
 
   state = {};
-  constructor(props){
-    super(props)
-    console.log("Navbar - construct")
-  }  
-
-componentDidMount(){
-  console.log("Navbar - componentDidMount")
-}
+  componentDidUpdate(){
+    console.log("Navbar - componentDidUpdate");
+  }
   render() {
     console.log("Navbar - navbar")
 

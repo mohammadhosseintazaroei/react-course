@@ -3,14 +3,14 @@ import ProductContext from "../context/products";
 
 export default class Product extends Component {
   static contextType = ProductContext;
-  constructor(props){
-    super(props)
-    console.log("Product - construct")
-  }  
 
-componentDidMount(){
-  console.log("Product - componentDidMount")
-}
+  componentDidUpdate(){
+    console.log("Product - componentDidUpdate");
+  }
+
+  componentWillUnmount(){
+    console.log("Product - componentWillUnmount");
+  }
   render() {
     console.log("Product - render")
 
