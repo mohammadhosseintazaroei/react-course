@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Products from "./products";
 import Navbar from "./navbar";
 import ProductContext from "../../context/products";
@@ -9,6 +9,13 @@ export default function App() {
     { id: 3, count: 2, productName: "airpod" },
     { id: 4, count: 7, productName: "toy" },
   ]);
+
+  useEffect(() => {
+    console.log("App");
+  }, []);
+  useEffect(() => {
+    console.log("App2");
+  });
   return (
     <>
       <ProductContext.Provider
