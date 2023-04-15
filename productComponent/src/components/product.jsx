@@ -3,8 +3,17 @@ import ProductContext from "../context/products";
 
 export default class Product extends Component {
   static contextType = ProductContext;
+  constructor(props){
+    super(props)
+    console.log("Product - construct")
+  }  
 
+componentDidMount(){
+  console.log("Product - componentDidMount")
+}
   render() {
+    console.log("Product - render")
+
     const { productName } = this.props;
     return (
       <div>

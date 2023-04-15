@@ -5,7 +5,17 @@ class Navbar extends Component {
   static contextType = ProductContext;
 
   state = {};
+  constructor(props){
+    super(props)
+    console.log("Navbar - construct")
+  }  
+
+componentDidMount(){
+  console.log("Navbar - componentDidMount")
+}
   render() {
+    console.log("Navbar - navbar")
+
     return (
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
