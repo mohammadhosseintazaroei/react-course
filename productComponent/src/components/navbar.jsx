@@ -5,11 +5,8 @@ class Navbar extends Component {
   static contextType = ProductContext;
 
   state = {};
-  componentDidUpdate(){
-    console.log("Navbar - componentDidUpdate");
-  }
+
   render() {
-    console.log("Navbar - navbar")
 
     return (
       <nav className="navbar navbar-light bg-light">

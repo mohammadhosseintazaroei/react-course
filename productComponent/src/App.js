@@ -3,10 +3,6 @@ import Navbar from "./components/navbar";
 import Products from "./components/products";
 import ProductContext from "./context/products";
 export default class App extends Component {
-
-componentDidUpdate(){
-  console.log("App - componentDidUpdate");
-}
   
   state = {
     products: [
@@ -17,7 +13,6 @@ componentDidUpdate(){
     ],
   };
   render() {
-    console.log("App - render")
 
     return (
       <>
