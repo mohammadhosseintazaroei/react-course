@@ -3,7 +3,11 @@ import Users from "./components/users";
 class App extends Component {
   state = {};
   render() {
-    return <Users />;
+    return (
+      <>
+      <Users />
+      </>
+    );
   }
 }
 
