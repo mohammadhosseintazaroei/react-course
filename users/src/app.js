@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Users from "./components/users";
 import Navabar from "./components/navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/home";
 import Login from "./components/logn";
 import Register from "./components/register";
 import User from "./components/user";
+import Users from "./components/users";
 
 class App extends Component {
   state = {};
