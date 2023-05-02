@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import avatar from "../assets/images/avatar.png";
 import LoadingUsers from "./loading/loadingUsers";
+import { Link } from "react-router-dom";
+
 class Users extends Component {
   state = {
     users: [],
@@ -13,7 +15,7 @@ class Users extends Component {
         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTM4NTA1MTYwMiIsImlhdCI6MTY4MTU2Nzg4NiwiZXhwIjoxNjg0MTU5ODg2fQ.-LdZercfBplNcMHJ3cAxK4bBKXt26xeYggZW3h2Z0cE`,
       },
     });
-   this.setState({ users: res.data.data.Users, isLoading: false });
+    this.setState({ users: res.data.data.Users, isLoading: false });
   }
   render() {
     return (
@@ -32,9 +34,11 @@ class Users extends Component {
                     src={user.avatarURL ? user.avatarURL : avatar}
                     style={{ borderRadius: "50%", width: "100px" }}
                   />
-                  <h4>
-                    {user.first_name} {user.last_name}
-                  </h4>
+                  <Link to={`/users/${user.id}`}>
+                    <h4>
+                      {user.first_name} {user.last_name}
+                    </h4>
+                  </Link>
                   <div>{user.id}</div>
                   <h5>{user.mobile}</h5>
                   <h5>{user.email}</h5>
@@ -99,10 +103,10 @@ class Users extends Component {
         },
       }
     );
-    const updatedUsers = [...this.state.users]
-    const index = updatedUsers.indexOf(user)
-    updatedUsers[index] = {...user}
-    this.setState({users: updatedUsers})
+    const updatedUsers = [...this.state.users];
+    const index = updatedUsers.indexOf(user);
+    updatedUsers[index] = { ...user };
+    this.setState({ users: updatedUsers });
   };
   handleDelete = async (user) => {
     const response = await axios.delete(
@@ -115,7 +119,7 @@ class Users extends Component {
       }
     );
     const newUsers = this.state.users.filter((u) => u.id !== user.id);
-    this.setState({users: newUsers});
+    this.setState({ users: newUsers });
   };
 }
 
