@@ -21,7 +21,7 @@ export default function Users() {
       await axios
         .get("http://localhost:8000/admin/users/all", {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTM4NTA1MTYwMiIsImlhdCI6MTY4MTU2Nzg4NiwiZXhwIjoxNjg0MTU5ODg2fQ.-LdZercfBplNcMHJ3cAxK4bBKXt26xeYggZW3h2Z0cE`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTQ0ODg4ODg4OCIsImlhdCI6MTY4MzI4NjUxNiwiZXhwIjoxNjg1ODc4NTE2fQ.iuAtOec7Sqg1TYGkZCprwpYiL_muJ5e4fDAvPMDpaNo`,
           },
         })
         .then((res) => {
@@ -50,7 +50,7 @@ export default function Users() {
       {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTM4NTA1MTYwMiIsImlhdCI6MTY4MTU2Nzg4NiwiZXhwIjoxNjg0MTU5ODg2fQ.-LdZercfBplNcMHJ3cAxK4bBKXt26xeYggZW3h2Z0cE",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTQ0ODg4ODg4OCIsImlhdCI6MTY4MzI4NjUxNiwiZXhwIjoxNjg1ODc4NTE2fQ.iuAtOec7Sqg1TYGkZCprwpYiL_muJ5e4fDAvPMDpaNo",
         },
       }
     );
@@ -64,7 +64,7 @@ export default function Users() {
       {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTM4NTA1MTYwMiIsImlhdCI6MTY4MTU2Nzg4NiwiZXhwIjoxNjg0MTU5ODg2fQ.-LdZercfBplNcMHJ3cAxK4bBKXt26xeYggZW3h2Z0cE",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTQ0ODg4ODg4OCIsImlhdCI6MTY4MzI4NjUxNiwiZXhwIjoxNjg1ODc4NTE2fQ.iuAtOec7Sqg1TYGkZCprwpYiL_muJ5e4fDAvPMDpaNo",
         },
       }
     );
@@ -79,7 +79,7 @@ export default function Users() {
       {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTM4NTA1MTYwMiIsImlhdCI6MTY4MTU2Nzg4NiwiZXhwIjoxNjg0MTU5ODg2fQ.-LdZercfBplNcMHJ3cAxK4bBKXt26xeYggZW3h2Z0cE",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTQ0ODg4ODg4OCIsImlhdCI6MTY4MzI4NjUxNiwiZXhwIjoxNjg1ODc4NTE2fQ.iuAtOec7Sqg1TYGkZCprwpYiL_muJ5e4fDAvPMDpaNo",
         },
       }
     );
