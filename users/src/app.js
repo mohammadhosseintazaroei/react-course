@@ -7,6 +7,7 @@ import Register from "./components/register";
 import User from "./components/user";
 import Users from "./components/users";
 import NotFound from "./components/notFound";
+import ClassLogin from "./components/classComponents/ClassLogin";
 
 class App extends Component {
   state = {};
@@ -18,7 +19,7 @@ class App extends Component {
           <Routes>
             <Route path="/users" element={<Users />} />
             <Route path="/users/:id" element={<User />} />
-            <Route path="/login/:timestamp?" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Home />} />
             <Route path="/not-found" element={<NotFound />} />
